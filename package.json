@@ -1,0 +1,22 @@
+{
+  "name": "future-diary-sdk",
+  "version": "0.1.0",
+  "description": "Future Diary SDK for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future-diary/future-diary-sdk.git"
+  },
+  "author": "LitoMore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/future-diary/future-diary-sdk/issues"
+  },
+  "homepage": "https://github.com/future-diary/future-diary-sdk#readme",
+  "devDependencies": {
+    "xo": "^0.22.0"
+  }
+}
