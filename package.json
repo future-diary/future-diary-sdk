@@ -21,6 +21,7 @@
     "xo": "^0.22.0"
   },
   "dependencies": {
+    "form-data": "^2.3.2",
     "got": "^9.0.0",
     "iconv-lite": "^0.4.23"
   }

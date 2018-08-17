@@ -1,5 +1,6 @@
 const got = require('got');
 const iconv = require('iconv-lite');
+const FormData = require('form-data');
 
 class FutureDiary {
 	constructor(opt) {
@@ -17,14 +18,33 @@ class FutureDiary {
 			query: params
 		});
 		const result = iconv.decode(body, 'gb2312');
-		return FutureDiary.fixJson(result);
+		return FutureDiary._parseJson(result);
 	}
 
-	static fixJson(str) {
+	async post(uri, params) {
+		const url = this.endpoint + '/api' + uri + '.json';
+		const form = new FormData();
+		Object.keys(params).forEach(key => {
+			form.append(key, params[key]);
+		});
+		const {body} = await got.post(url, {
+			encoding: null,
+			auth: `${this.username}:${this.password}`,
+			body: form
+		});
+		const result = iconv.decode(body, 'gb2312');
+		return FutureDiary._parseJson(result);
+	}
+
+	static _parseJson(str) {
 		const result = str
 			.replace(/"reply_to_status_id"="/g, `"reply_to_status_id":"`)
 			.replace(/"reply_to_user_id"="/g, `"reply_to_user_id":"`);
-		return result;
+		try {
+			return JSON.parse(result);
+		} catch (err) {
+			return result;
+		}
 	}
 }
 
