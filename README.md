@@ -50,6 +50,7 @@ f.post(uri, params);
 
 ## Related
 
+- [future-diary-cli](https://github.com/future-diary/future-diary-cli) - CLI for this module
 - [fanfou-sdk](https://github.com/LitoMore/fanfou-sdk-node) - Fanfou SDK for Node.js
 
 ## License
