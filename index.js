@@ -30,6 +30,7 @@ class FutureDiary {
 		const {body} = await got.post(url, {
 			encoding: null,
 			auth: `${this.username}:${this.password}`,
+			headers: {'content-type': 'multipart/form-data; charset=gb2312; boundary=' + form.getBoundary()},
 			body: form
 		});
 		const result = iconv.decode(body, 'gb2312');

@@ -25,5 +25,12 @@ test('test fd.get() with html text', async t => {
 
 test('test post status', async t => {
 	const result = await f.post('/statuses/update', {status: 'hi', source: 'unicorn'});
-	t.true(result.length > 0);
+	const [status = {}] = result;
+	t.is(status.text, 'hi');
 });
+
+// Test('test post CJK text', async t => {
+// 	const result = await f.post('/statuses/update', {status: '你好'});
+// 	const [status = {}] = result;
+// 	t.is(status.text, '你好');
+// });
