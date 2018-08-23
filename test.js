@@ -29,8 +29,8 @@ test('test post status', async t => {
 	t.is(status.text, 'hi');
 });
 
-// Test('test post CJK text', async t => {
-// 	const result = await f.post('/statuses/update', {status: '你好'});
-// 	const [status = {}] = result;
-// 	t.is(status.text, '你好');
-// });
+test('test post CJK text', async t => {
+	const result = await f.post('/statuses/update', {status: '你好'});
+	const [status = {}] = result;
+	t.is(status.text, '你好');
+});

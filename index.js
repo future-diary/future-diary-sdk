@@ -1,6 +1,6 @@
 const got = require('got');
 const iconv = require('iconv-lite');
-const FormData = require('form-data');
+const urlencode = require('urlencode');
 
 class FutureDiary {
 	constructor(opt) {
@@ -23,15 +23,12 @@ class FutureDiary {
 
 	async post(uri, params) {
 		const url = this.endpoint + '/api' + uri + '.json';
-		const form = new FormData();
-		Object.keys(params).forEach(key => {
-			form.append(key, params[key]);
-		});
 		const {body} = await got.post(url, {
 			encoding: null,
 			auth: `${this.username}:${this.password}`,
-			headers: {'content-type': 'multipart/form-data; charset=gb2312; boundary=' + form.getBoundary()},
-			body: form
+			headers: {'content-type': 'application/x-www-form-urlencoded; charset=gb2312'},
+			from: true,
+			body: urlencode.stringify(params, {charset: 'gb2312'})
 		});
 		const result = iconv.decode(body, 'gb2312');
 		return FutureDiary._parseJson(result);
