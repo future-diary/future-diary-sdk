@@ -36,11 +36,11 @@ class FutureDiary {
 
 	static _parseJson(str) {
 		const result = str
-			.replace(/"reply_to_status_id"="/g, `"reply_to_status_id":"`)
-			.replace(/"reply_to_user_id"="/g, `"reply_to_user_id":"`);
+			.replace(/"reply_to_status_id"="/g, '"reply_to_status_id":"')
+			.replace(/"reply_to_user_id"="/g, '"reply_to_user_id":"');
 		try {
 			return JSON.parse(result);
-		} catch (err) {
+		} catch (error) {
 			return result;
 		}
 	}
