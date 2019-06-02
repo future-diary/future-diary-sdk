@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/future-diary/future-diary-sdk#readme",
   "devDependencies": {
-    "ava": "^1.0.0-beta.7",
+    "ava": "^2.0.0",
     "xo": "^0.24.0"
   },
   "dependencies": {
