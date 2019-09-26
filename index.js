@@ -40,7 +40,7 @@ class FutureDiary {
 			.replace(/"reply_to_user_id"="/g, '"reply_to_user_id":"');
 		try {
 			return JSON.parse(result);
-		} catch (error) {
+		} catch (_) {
 			return result;
 		}
 	}
