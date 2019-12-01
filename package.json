@@ -21,7 +21,7 @@
     "xo": "^0.25.3"
   },
   "dependencies": {
-    "got": "^9.0.0",
+    "got": "^10.0.0",
     "iconv-lite": "^0.5.0",
     "urlencode": "^1.1.0"
   }
