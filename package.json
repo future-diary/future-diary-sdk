@@ -18,7 +18,7 @@
   "homepage": "https://github.com/future-diary/future-diary-sdk#readme",
   "devDependencies": {
     "ava": "^2.0.0",
-    "xo": "^0.25.3"
+    "xo": "^0.26.0"
   },
   "dependencies": {
     "got": "^9.0.0",
