@@ -3,6 +3,9 @@
   "version": "0.0.5",
   "description": "Future Diary SDK for Node.js",
   "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "test": "xo"
   },
@@ -18,7 +21,7 @@
   "homepage": "https://github.com/future-diary/future-diary-sdk#readme",
   "devDependencies": {
     "ava": "^1.0.0-beta.7",
-    "xo": "^0.22.0"
+    "xo": "^0.38.2"
   },
   "dependencies": {
     "got": "^9.0.0",

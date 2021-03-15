@@ -2,11 +2,12 @@ const test = require('ava');
 const Future = require('.');
 
 const {
+	FD_HOST: host,
 	FD_USERNAME: username,
 	FD_PASSWORD: password
 } = process.env;
 
-const f = new Future({username, password});
+const f = new Future({host, username, password});
 
 test('test fd.get() without query', async t => {
 	const result = await f.get('/statuses/user_timeline');

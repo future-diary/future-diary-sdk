@@ -1,7 +1,5 @@
 # future-diary-sdk
 
-[![](https://badges.greenkeeper.io/future-diary/future-diary-sdk.svg)](https://greenkeeper.io/)
-[![](https://img.shields.io/travis/future-diary/future-diary-sdk/master.svg)](https://travis-ci.org/future-diary/future-diary-sdk)
 [![](https://img.shields.io/npm/v/future-diary-sdk.svg)](https://www.npmjs.com/package/future-diary-sdk)
 [![](https://img.shields.io/npm/l/future-diary-sdk.svg)](https://github.com/future-diary/future-diary-sdk/blob/master/LICENSE)
 [![](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
@@ -20,6 +18,7 @@ $ npm i future-diary-sdk
 const Future = require('future-diary-sdk');
 
 const f = new Future({
+	host: 'weilairiji.com',
 	username: '',
 	password: ''
 });
